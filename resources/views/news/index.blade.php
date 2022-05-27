@@ -11,5 +11,6 @@
                     </div>
                 @endforeach
             </div>
+            {{ $categories->links() }}
         </div>
 @endsection

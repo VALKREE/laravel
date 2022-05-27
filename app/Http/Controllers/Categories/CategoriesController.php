@@ -4,30 +4,22 @@ namespace App\Http\Controllers\Categories;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categories;
+use App\Queries\QueryBuilderCategories;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
-    public function index()
+    public function index(QueryBuilderCategories $categories)
     {
-        $model = app(Categories::class);
-        $categories = $model->getCategories();
-        /*dd(
-            $model->getCategories()
-        );*/
         return view('categories.index', [
-            'categories' => $categories
+            'categories' => $categories->getCategories()
         ]);
     }
-    public function show(int $id)
+
+    public function show(QueryBuilderCategories $categories, int $id)
     {
-        if($id > 11) {
-            abort(404);
-        }
-        $model = app(Categories::class);
-        $categories = $model->getCategory($id);
         return view('categories.show', [
-            'categories' => $categories
+            'categories' =>$categories->getCategoryById($id)
         ]);
     }
 }

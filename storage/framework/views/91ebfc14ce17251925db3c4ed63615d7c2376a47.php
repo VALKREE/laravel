@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
     <div class="container w-100">
-        <div class="">
+        <div>
             <h1>Главная страница</h1>
             <form action="" class="feedback d-flex flex-column">
                 <h3 class="feedback_header">Форма обратной связи</h3>

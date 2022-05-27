@@ -17,6 +17,8 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('title',255)->nullable();
             $table->string('author',255)->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp ('updated_at')->nullable();
         });
     }
 

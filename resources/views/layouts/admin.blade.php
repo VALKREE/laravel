@@ -65,17 +65,7 @@
                 </div>
             </header>
             <main class="main">
-                <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="row">
-                            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                                <h1>Админ панель</h1>
-                                <a href="/admin/news">Редактор новостей</a>
-                                <a href="/admin/categories">Редактор категорий</a>
-                            </main>
-                        </div>
-                    </div>
-                </div>
+                @yield('content')
             </main>
             <footer class="footer text-muted py-5">
                 <div class="container">

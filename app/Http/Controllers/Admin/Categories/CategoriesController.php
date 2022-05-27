@@ -1,50 +1,63 @@
 <?php
 
-namespace App\Http\Controllers\admin\categories;
+namespace App\Http\Controllers\Admin\Categories;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categories;
+use App\Queries\QueryBuilderCategories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(QueryBuilderCategories $categories)
     {
-        return view('admin.categories.index');
+        return view('admin.categories.index', [
+            'categories' => $categories->getCategories()
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->only(['title', 'author', 'created_at']);
+        $category = new Categories($validated);
+
+        if($category->save()) {
+            return redirect()->route('admin.categories.index')
+                ->with('success', 'Запись успешно добавлена');
+        }
+
+        return back()->with('error', 'Ошибка добавления');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Categories $category
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Categories $category)
     {
         //
     }
@@ -52,34 +65,46 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Categories $category
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit($id)
+    public function edit(Categories $category)
     {
-        //
+        return view('admin.categories.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param Categories $category
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Categories $category)
     {
-        //
+        $validated = $request->only(['title', 'author', 'updated_at']);
+
+        $category = $category->fill($validated);
+        if($category->save()) {
+            return redirect()->route('admin.categories.index')
+                ->with('success', 'Запись успешно обновлена');
+        }
+
+        return back()->with('error', 'Ошибка обновления');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Categories $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Categories $category)
     {
-        //
+        $category->delete();
+        return \redirect('admin.categories.index')
+            ->with('success','Категория удалена');
     }
 }
