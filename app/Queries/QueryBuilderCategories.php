@@ -18,13 +18,13 @@ class QueryBuilderCategories implements QueryBuilder
 
     public function getCategories(): LengthAwarePaginator
     {
-        return Categories::select(['id', 'title', 'author', 'updated_at'])
+        return Categories::select(['id', 'title', 'author', 'created_at', 'updated_at'])
             ->paginate(10);
     }
 
     public function getCategoryById(int $id)
     {
-        return Categories::select(['id', 'title', 'author', 'updated_at'])
+        return Categories::select(['id', 'title', 'author', 'created_at', 'updated_at'])
             ->findOrFail($id);
     }
 }

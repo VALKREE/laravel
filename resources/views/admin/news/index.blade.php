@@ -48,7 +48,6 @@
     </div>
 
 @endsection
-@stack('js')
 @push('js')
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {

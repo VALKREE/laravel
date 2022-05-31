@@ -103,8 +103,12 @@ class CategoriesController extends Controller
      */
     public function destroy(Categories $category)
     {
-        $category->delete();
-        return \redirect('admin.categories.index')
-            ->with('success','Категория удалена');
+        try {
+            $category->delete();
+            return response()->json('ok');
+        }catch (\Exception $e){
+            \Log::error($e->getMessage());
+            return response()->json('error', 400);
+        }
     }
 }
