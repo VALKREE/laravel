@@ -6,6 +6,7 @@ use App\Http\Controllers\News\NewsController;
 use App\Http\Controllers\Categories\CategoriesController;
 use App\Http\Controllers\Feedback\FeedbackController;
 use App\Http\Controllers\Upload\UploadController;
+use App\Http\Controllers\Admin\Users\UsersController as AdminController_users;
 use App\Http\Controllers\Admin\Account\AccountController;
 use App\Http\Controllers\Admin\IndexController as AdminController_Admin;
 use App\Http\Controllers\Admin\Categories\CategoriesController as AdminController_Categories;
@@ -57,6 +58,7 @@ Route::group(['middleware' => 'auth'], function(){
         Route::resource('/news', AdminController_News::class);
         Route::resource('/feedback', AdminController_Feedback::class);
         Route::resource('/upload', AdminController_Upload::class);
+        Route::resource('/users', AdminController_users::class);
     });
 });
 

@@ -7,6 +7,7 @@
             <a href="/admin/categories">Редактор категорий</a>
             <a href="/admin/feedback">Обратная связь</a>
             <a href="/admin/upload">Заявки на загрузку</a>
+            <a href="/admin/users">Пользователи</a>
         </div>
     </div>
 @endsection
