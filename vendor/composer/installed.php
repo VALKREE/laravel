@@ -430,6 +430,15 @@
             'reference' => '9e4b005daa20b0c161f3845040046dc9ddc1d74e',
             'dev_requirement' => false,
         ),
+        'laravel/socialite' => array(
+            'pretty_version' => 'v5.5.2',
+            'version' => '5.5.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/socialite',
+            'aliases' => array(),
+            'reference' => '68afb03259b82d898c68196cbcacd48596a9dd72',
+            'dev_requirement' => false,
+        ),
         'laravel/tinker' => array(
             'pretty_version' => 'v2.7.2',
             'version' => '2.7.2.0',
@@ -446,6 +455,15 @@
             'install_path' => __DIR__ . '/../laravel/ui',
             'aliases' => array(),
             'reference' => '65ec5c03f7fee2c8ecae785795b829a15be48c2c',
+            'dev_requirement' => false,
+        ),
+        'laravie/parser' => array(
+            'pretty_version' => 'v2.1.5',
+            'version' => '2.1.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravie/parser',
+            'aliases' => array(),
+            'reference' => '6f888ae6fbd3cbf5121f8fa298b2ece0f13dc825',
             'dev_requirement' => false,
         ),
         'league/commonmark' => array(
@@ -482,6 +500,15 @@
             'install_path' => __DIR__ . '/../league/mime-type-detection',
             'aliases' => array(),
             'reference' => 'ff6248ea87a9f116e78edd6002e39e5128a0d4dd',
+            'dev_requirement' => false,
+        ),
+        'league/oauth1-client' => array(
+            'pretty_version' => 'v1.10.1',
+            'version' => '1.10.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/oauth1-client',
+            'aliases' => array(),
+            'reference' => 'd6365b901b5c287dd41f143033315e2f777e1167',
             'dev_requirement' => false,
         ),
         'mockery/mockery' => array(
@@ -569,6 +596,15 @@
             'install_path' => __DIR__ . '/../opis/closure',
             'aliases' => array(),
             'reference' => '3d81e4309d2a927abbe66df935f4bb60082805ad',
+            'dev_requirement' => false,
+        ),
+        'orchestra/parser' => array(
+            'pretty_version' => 'v6.1.0',
+            'version' => '6.1.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../orchestra/parser',
+            'aliases' => array(),
+            'reference' => '6aa0c0034e4c3f6e3f9913a1b682a92186990be7',
             'dev_requirement' => false,
         ),
         'phar-io/manifest' => array(
@@ -775,8 +811,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -979,6 +1015,33 @@
             'aliases' => array(),
             'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
             'dev_requirement' => true,
+        ),
+        'socialiteproviders/github' => array(
+            'pretty_version' => '4.1.0',
+            'version' => '4.1.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../socialiteproviders/github',
+            'aliases' => array(),
+            'reference' => '25fc481721d74b829b43bff3519e7103d5339e19',
+            'dev_requirement' => false,
+        ),
+        'socialiteproviders/manager' => array(
+            'pretty_version' => 'v4.1.0',
+            'version' => '4.1.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../socialiteproviders/manager',
+            'aliases' => array(),
+            'reference' => '4e63afbd26dc45ff263591de2a0970436a6a0bf9',
+            'dev_requirement' => false,
+        ),
+        'socialiteproviders/vkontakte' => array(
+            'pretty_version' => '4.2.2',
+            'version' => '4.2.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../socialiteproviders/vkontakte',
+            'aliases' => array(),
+            'reference' => '8bfbe64cb43f99f56b59d0aec2dccfae29b2de4f',
+            'dev_requirement' => false,
         ),
         'swiftmailer/swiftmailer' => array(
             'pretty_version' => 'v6.3.0',

@@ -6,6 +6,8 @@
                 <div class="card-header"><?php echo e(__('Login')); ?></div>
 
                 <div class="card-body">
+                    <a href="<?php echo e(route('social.redirect', ['driver' => 'vkontakte'])); ?>">Вход через ВК</a>
+                    <a href="<?php echo e(route('social.redirect', ['driver' => 'github'])); ?>">Вход через GitHub</a>
                     <form method="POST" action="<?php echo e(route('login')); ?>">
                         <?php echo csrf_field(); ?>
 

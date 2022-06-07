@@ -1,7 +1,12 @@
 <?php $__env->startSection('content'); ?>
     <div class="container">
         <h3>Добро пожаловать, <?php echo e(Auth::user()->name); ?></h3>
-        <a href="<?php echo e(route('admin.index')); ?>">Админ панель</a>
+        <?php if(Auth::user()->avatar): ?>
+            <img src="<?php echo e(Auth::user()->avatar); ?>" style="width:200px;">
+        <?php endif; ?>
+        <?php if(Auth::user()->is_admin): ?>
+            <a href="<?php echo e(route('admin.index')); ?>">Админ панель</a>
+        <?php endif; ?>
     </div>
 <?php $__env->stopSection(); ?>
 
