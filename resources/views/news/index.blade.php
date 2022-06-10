@@ -5,8 +5,10 @@
                 @foreach($news as $newsItem)
                     <div class="main_new" id="{{ $newsItem->id }}" style="display: flex; flex-direction: column;">
                         <a href="{{ route('news.show', ['id' => $newsItem->id]) }}">{{ $newsItem->title }}</a>
-                        <img style="width: 300px;" src="{{ $newsItem->image }}" alt="{{ $newsItem->title }}" class="main_image">
-                        <p class="main_description">{{ $newsItem->description }}</p>
+                        @if($newsItem->image)
+                            <img style="width: 300px;" src="{{ Storage::url($newsItem->image) }}" alt="{{ $newsItem->title }}" class="main_image">
+                        @endif
+                        <p class="main_description">{{ html_entity_decode($newsItem->description) }}</p>
                         <p class="main_author"><b>Автор:</b>{{ $newsItem->author }}</p>
                     </div>
                 @endforeach
@@ -14,3 +16,6 @@
             {{ $news->links() }}
         </div>
 @endsection
+@push('js')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+@endpush

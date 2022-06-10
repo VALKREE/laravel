@@ -7,6 +7,7 @@ use App\Http\Controllers\Categories\CategoriesController;
 use App\Http\Controllers\Feedback\FeedbackController;
 use App\Http\Controllers\Upload\UploadController;
 use App\Http\Controllers\Admin\Parser\ParserController as AdminController_parser;
+use App\Http\Controllers\Admin\Resources\ResourcesController as AdminController_resources;
 use App\Http\Controllers\Admin\Users\UsersController as AdminController_users;
 use App\Http\Controllers\Admin\Account\AccountController;
 use App\Http\Controllers\Admin\IndexController as AdminController_Admin;
@@ -64,6 +65,7 @@ Route::group(['middleware' => 'auth'], function(){
         Route::resource('/feedback', AdminController_Feedback::class);
         Route::resource('/upload', AdminController_Upload::class);
         Route::resource('/users', AdminController_users::class);
+        Route::resource('/resources', AdminController_resources::class);
     });
 });
 

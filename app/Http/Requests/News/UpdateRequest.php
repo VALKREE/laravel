@@ -27,7 +27,7 @@ class UpdateRequest extends FormRequest
             'category_id' => ['required', 'integer','min:1'],
             'title' => ['required', 'string', 'min:3', 'max:250'],
             'description' => ['nullable', 'string', 'min:3', 'max:250'],
-            'image' => ['nullable', 'string', 'min:3', 'max:250'],
+            'image' => ['nullable', 'image', 'mimes:png,jpg'],
             'author' => ['required', 'string', 'min:3', 'max:250']
         ];
     }

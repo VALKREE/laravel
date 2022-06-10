@@ -8,6 +8,7 @@ use App\Http\Requests\News\UpdateRequest;
 use App\Models\Categories;
 use App\Models\News;
 use App\Queries\QueryBuilderNews;
+use App\Services\UploadService;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -43,10 +44,15 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CreateRequest $request)
+    public function store(CreateRequest $request, UploadService $uploadService)
     {
         $validated = $request->validated();
         $validated['slug'] = \Str::slug($validated['title']);
+
+        //file upload
+        if($request->hasFile('image')) {
+            $validated['image'] = $uploadService->uploadImage($request->file('image'));
+        }
 
         $news = News::create($validated);
         if($news) {
@@ -90,10 +96,15 @@ class NewsController extends Controller
      * @param News $news
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateRequest $request, News $news)
+    public function update(UpdateRequest $request, News $news, UploadService $uploadService)
     {
         $validated = $request->validated();
         $validated['slug'] = \Str::slug($validated['title']);
+
+        //file upload
+        if($request->hasFile('image')) {
+            $validated['image'] = $uploadService->uploadImage($request->file('image'));
+        }
 
         $news = $news->fill($validated);
         if($news->save()) {

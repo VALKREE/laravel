@@ -149,6 +149,8 @@
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/manager" />
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/vkontakte" />
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/github" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/laravel-filemanager" />
     </include_path>
   </component>
   <component name="ProjectId" id="29YIL4TXhA6Gq2kicafvhZK9XPl" />
@@ -157,16 +159,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/OpenServer/domains/laravel/laravel/app/Http/Requests/Resources",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\OpenServer\domains\laravel\laravel\app\Http\Requests\Resources" />
+      <recent name="E:\OpenServer\domains\laravel\laravel\resources\views\admin\resources" />
       <recent name="E:\OpenServer\domains\laravel\laravel\resources\views\admin\users" />
       <recent name="E:\OpenServer\domains\laravel\laravel\resources\views\Admin\News" />
     </key>
@@ -214,6 +221,10 @@
       <workItem from="1654516511673" duration="2046000" />
       <workItem from="1654578196925" duration="1346000" />
       <workItem from="1654579987890" duration="9703000" />
+      <workItem from="1654685992564" duration="1772000" />
+      <workItem from="1654750428157" duration="10936000" />
+      <workItem from="1654772060051" duration="5797000" />
+      <workItem from="1654832201360" duration="601000" />
     </task>
     <servers />
   </component>

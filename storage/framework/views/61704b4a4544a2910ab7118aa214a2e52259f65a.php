@@ -10,7 +10,7 @@
     <div class="row">
         <?php echo $__env->make('inc.messages', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-        <form method="post" action="<?php echo e(route('admin.news.update', ['news' => $news])); ?>">
+        <form method="post" action="<?php echo e(route('admin.news.update', ['news' => $news])); ?>" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
             <?php echo method_field('put'); ?>
 
@@ -41,7 +41,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="image">Изображение</label>
+                <label for="image">Изображение</label><br>
+                <?php if($news->image): ?>
+                    <img src="<?php echo e(Storage::url($news->image)); ?>" style="width: 350px;">
+                <?php endif; ?>
                 <input type="file" id="image" name="image" class="form-control">
             </div>
             <div class="form-group">
@@ -54,4 +57,15 @@
     </div>
 
 <?php $__env->stopSection(); ?>
+<?php $__env->startPush('js'); ?>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#description' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+<?php $__env->stopPush(); ?>
+
 <?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\OpenServer\domains\laravel\laravel\resources\views/admin/news/edit.blade.php ENDPATH**/ ?>

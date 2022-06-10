@@ -51,17 +51,17 @@
                                     </li>
                                 <?php endif; ?>
                             <?php else: ?>
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <li>
+                                    <a id="navbarDropdown" class="text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         <?php echo e(Auth::user()->name); ?>
 
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                                        <a class="text-black" href="<?php echo e(route('logout')); ?>"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            <?php echo e(__('Logout')); ?>
+                                            <?php echo e(__('Выйти')); ?>
 
                                         </a>
 
@@ -99,6 +99,7 @@
             <p class="mb-0">&#169;Сайт создан для Geekbrains</p>
         </div>
     </footer>
+    <?php echo $__env->yieldPushContent('js'); ?>
     <script src="<?php echo e(asset('js/bootstrap.bundle.min.js')); ?>"></script>
 </body>
 </html>
