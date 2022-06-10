@@ -27,6 +27,17 @@ class QueryBuilderResources implements QueryBuilder
             ->paginate(10);
     }
 
+    public function getResourcesForParser():LengthAwarePaginator
+    {
+        return Resources::select(
+            [
+                'resources.id',
+                'resources.url',
+                'resources.created_at',
+                'resources.updated_at',
+            ])->paginate(99999999999);;
+    }
+
     public function getResourcesById(int $id)
     {
         return Resources::select(

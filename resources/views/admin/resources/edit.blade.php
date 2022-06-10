@@ -16,12 +16,12 @@
             @method('put')
             <div class="form-group">
                 <label for="id=">#ID</label>
-                <input type="text" id="id=" name="id=" class="form-control" value="{{ $resources->id }}">
+                <input type="text" id="id=" name="id=" class="form-control" value="{{ $resource->id }}">
             </div>
 
             <div class="form-group">
                 <label for="url">URL</label>
-                <textarea class="form-control" name="url" id="url">{{ $resources->url }}</textarea>
+                <textarea class="form-control" name="url" id="url">{{ $resource->url }}</textarea>
             </div>
 
             <br>

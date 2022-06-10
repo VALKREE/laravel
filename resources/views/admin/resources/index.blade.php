@@ -28,7 +28,7 @@
                       <td>{{ $resourcesItem->created_at }}</td>
                       <td>{{ $resourcesItem->updated_at }}</td>
                       <td>
-                          <a href="{{ route('admin.resources.edit', ['resource' => $resourcesItem->id]) }}" style="font-size: 12px;">Ред.</a> &nbsp;
+                          <a href="{{ route('admin.resources.edit', ['resource' => $resourcesItem]) }}" style="font-size: 12px;">Ред.</a> &nbsp;
                           <a href="javascript:;" class="delete" rel="{{ $resourcesItem->id }}" style="color:red; font-size: 12px;">Уд.</a>
                       </td>
                   </tr>

@@ -21,7 +21,7 @@ class ParserService implements Parser
     {
         $xml = XmlParser::load($this->link);
 
-        return $xml->parse([
+        $data = $xml->parse([
             'title' => [
                 'uses' => 'channel.title'
             ],

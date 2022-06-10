@@ -73,11 +73,10 @@ class ResourcesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(QueryBuilderResources $resources)
+    public function edit(Resources $resource)
     {
-        $resources = Resources::all();
         return view('admin.resources.edit', [
-            'resources' => $resources
+            'resource' => $resource
         ]);
     }
 
@@ -88,13 +87,13 @@ class ResourcesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Resources $resource)
+    public function update(UpdateRequest $request, Resources $resource)
     {
         $validated = $request->only(['id', 'url', 'updated_at']);
 
         $resource = $resource->fill($validated);
         if($resource->save()) {
-            return redirect()->route('admin.categories.index')
+            return redirect()->route('admin.resources.index')
                 ->with('success', 'Запись успешно обновлена');
         }
 

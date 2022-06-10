@@ -4,28 +4,17 @@ namespace App\Http\Controllers\Admin\Parser;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\JobNewsParsing;
+use App\Queries\QueryBuilderResources;
 
 class ParserController extends Controller
 {
-    public function __invoke()
+    public function __invoke(QueryBuilderResources $resources)
     {
-        // ulrs need take on table Sources
-        $urls = [
-            'https://news.yandex.ru/auto.rss',
-            'https://news.yandex.ru/auto_racing.rss',
-            'https://news.yandex.ru/army.rss',
-            'https://news.yandex.ru/gadgets.rss',
-            'https://news.yandex.ru/index.rss',
-            'https://news.yandex.ru/martial_arts.rss',
-            'https://news.yandex.ru/communal.rss',
-            'https://news.yandex.ru/health.rss',
-            'https://news.yandex.ru/games.rss',
-            'https://news.yandex.ru/internet.rss',
-            'https://news.yandex.ru/cyber_sport.rss',
-            'https://news.yandex.ru/movies.rss',
-            'https://news.yandex.ru/cosmos.rss',
-        ];
-
+        $urls = [];
+        $resources = $resources->getResourcesForParser();
+        foreach ($resources as $resource){
+            array_push($urls, $resource->url);
+        }
         foreach($urls as $url) {
             dispatch(new JobNewsParsing($url));
         }
